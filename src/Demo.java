@@ -5,9 +5,10 @@ public class Demo {
             CannibalReaper harvester = new CannibalReaper("Harvester");
             harvester.showInfo();
 
-            //harvester.setLives(0);
-            while (harvester.getLives() > 0) {
+            harvester.setLives(0);
+            do{
                 if (harvester.dodges()){
+                    harvester.setLives(harvester.getLives() + 1);
                     continue;
                 }
                 if (harvester.runAway()){
@@ -18,7 +19,7 @@ public class Demo {
                     harvester.showInfo();
                 }
                 //System.out.println("Harvester is dead Shepard!");
-            }
+            } while (harvester.getLives() > 0);
             System.out.println("+++++++++++++++++++++++++++++++++++++++");
 
 
