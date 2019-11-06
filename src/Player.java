@@ -100,12 +100,22 @@ public class Player {
         }
         return false;
     }
+    public boolean dropLoot(String lootName){
+        for (Loot currentLoot : inventory){
+            if (currentLoot.getName().equals(lootName)){
+                inventory.remove(currentLoot);
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void showInventory(){
         for(Loot item : inventory){
             System.out.println(item.getName());
         }
     }
-    public int Score(){
+    public int score(){
         int total = 0;
 //        for (int i= 0; i < inventory.size(); i++){
         for(Loot currentLoot : inventory) {
@@ -114,4 +124,5 @@ public class Player {
         }
         return total;
     }
+
 }
