@@ -105,4 +105,13 @@ public class Player {
             System.out.println(item.getName());
         }
     }
+    public int Score(){
+        int total = 0;
+//        for (int i= 0; i < inventory.size(); i++){
+        for(Loot currentLoot : inventory) {
+            //Loot currentLoot = inventory.get(i);
+            total = total + currentLoot.getValue();
+        }
+        return total;
+    }
 }

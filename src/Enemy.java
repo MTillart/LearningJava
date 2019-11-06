@@ -13,6 +13,8 @@ public class Enemy {
 
     public void takeDamage (int damage){
         int remainingHitPoints = this.hitPoints-damage;
+
+
         System.out.println("Attack!");
         if (remainingHitPoints > 0){
             setHitPoints(remainingHitPoints);
@@ -23,6 +25,7 @@ public class Enemy {
             if (lives > 0) {
                 System.out.println(this.name.toUpperCase() + ": I have lost a life," + this.lives +
                         " lives left.");
+                //this.setHitPoints(140);
             }else {
                 System.out.println(this.name.toUpperCase() + ": Took, too much damage. Arggg, I have died");
             }
